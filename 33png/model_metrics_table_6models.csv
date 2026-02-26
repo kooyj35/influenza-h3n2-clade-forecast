@@ -1,0 +1,7 @@
+﻿model,script,auc,pr_auc,precision,recall,f1,top1_hit_pct,top3_hit_pct,backtest_top1_pct,backtest_top3_pct,weighted_backtest_top1_pct,weighted_backtest_top3_pct,threshold
+M04_base13,04. 13기반.py,0.525,,0.168,0.818,0.269,15.0,54.0,,,,,0.5
+M06_f2,06. zenspark_F2.py,0.63,0.422,0.201,1.0,0.321,18.2,63.6,,,,,
+M21_balanced,##21. zenspark_balanced_202512_final.py,0.723,0.578,0.455,1.0,0.573,45.0,73.0,64.0,79.0,,,0.45
+M28_noweight,##28. zenspark_noweight_final.py,0.708,0.556,0.526,0.909,0.603,45.0,73.0,71.0,86.0,,,0.15
+M29_nestedcv_topk,##29. zenspark_noweight_nestedcv_topk.py,0.745,0.578,0.533,0.909,0.614,45.0,82.0,78.6,92.9,,,0.232
+M33_feature7_082,##33. zenspark_noweight_bootstrap_feature7_082_repro.py,0.76,0.601,0.518,0.909,0.599,45.0,82.0,78.6,92.9,80.6,93.5,0.223

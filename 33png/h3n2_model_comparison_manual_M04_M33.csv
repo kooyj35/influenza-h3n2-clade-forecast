@@ -1,0 +1,12 @@
+﻿항목,M04,M06,M21,M33 (Final)
+모델,ElasticNet Logistic Regression,ElasticNet Logistic Regression,ElasticNet Logistic Regression,ElasticNet Logistic Regression
+전처리,StandardScaler,StandardScaler,StandardScaler,StandardScaler
+Imbalance 처리,"class_weight={0:1, 1:15}","class_weight={0:1, 1:12}",class_weight='balanced',class_weight=None + use_sample_weight grid
+Feature 개수,8,8,8,7
+주요 Feature,"n, freq, freq_prev, freq_delta, nonsyn_med, syn_med, novelty_med, pam_reversion_med",M04와 동일,M04와 동일,"n, freq, freq_delta, freq_delta_2y, rolling_median_freq, nonsyn_med, pam_reversion_med"
+정규화,ElasticNet (L1 중심),ElasticNet,ElasticNet,ElasticNet
+하이퍼파라미터,"l1_ratio=0.9, C=0.5","l1_ratio=0.8, C=0.4","l1_ratio=0.8, C=0.4","Grid search(l1_ratio, C, use_sample_weight, min_recall)"
+Threshold,고정 0.2,고정 0.25,최적화(min_recall>=0.7),Grid + recall 제약 + conservative flag
+평가지표,Recall 중심 + AUC/F1/Top-k,PR-AUC + F2 중심,Generalization + Macro/Micro,Forecasting 성능(Top-3 CV/Backtest)
+추가 전략,없음,F2 score,Macro/Micro 분리 + threshold 최적화,Bootstrap stability + sensitivity + corr check
+목적,dominant clade 탐지(재현율 강화),Recall-Precision 균형,안정적 일반화 성능,실제 예측 운영 성능 최적화
